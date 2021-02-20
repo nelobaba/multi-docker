@@ -18,14 +18,14 @@ after_success:
   - docker push nelobaba/multi-nginx 
   - docker push nelobaba/multi-server 
   - docker push nelobaba/multi-worker 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "ca-central-1"
-#   app: "dockerize"
-#   env: "Dockerize-env"
-#   bucket_name: "elasticbeanstalk-ca-central-1-645095867705"
-#   bucket_path: "dockerize"
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_ACCESS_SECRET
+deploy:
+  provider: elasticbeanstalk
+  region: "ca-central-1"
+  app: "multi-docker"
+  env: "MultiDocker-env"
+  bucket_name: "elasticbeanstalk-ca-central-1-645095867705"
+  bucket_path: "docker-multi"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_ACCESS_SECRET
